@@ -72,7 +72,7 @@ public class SalesItemTest
     public void addCommentFailsForDuplicateAuthor()
     {
         SalesItem item = new SalesItem("Book", 2000);
-        assertEquals(true, item.addComment("Bob", "Nice book", 4));
+        assertEquals(true, item.addComment("Alice", "Nice book", 4));
         assertEquals(false, item.addComment("Alice", "Second review", 3)); //Same author, so rejects.
     }
 

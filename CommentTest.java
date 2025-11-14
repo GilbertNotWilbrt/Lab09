@@ -36,7 +36,19 @@ public class CommentTest
      * Called after every test case method.
      */
     @AfterEach
-    public void tearDown()
+    public void tearDown(){
+    }
+    public void constructorStoresDetails(){
+        Comment comment = new Comment("Alice", "Nice book", 4);
+        assertEquals("Alice", comment.getAuthor());
+        assertEquals("Nice phone", comment.getText()); //not sure why it's not working if its in fields
+        assertEquals(4, comment.getRating());
+    }
+    
+    public void upvoteIncreasesVoteCount()
     {
+        Comment comment = new Comment("Bob", "Ok", 3);
+        comment.upvote();
+        assertEquals(1, comment.getVoteCount());
     }
 }
