@@ -58,6 +58,24 @@ public class SalesItemTest
         SalesItem salesIte1 = new SalesItem("Java For Complete Idiots, Vol 2", 19900);
         assertEquals(false, salesIte1.addComment("Joshua Black", "Not worth the money. The font is too small.", -5));
     }
+    
+    public void addCommentRatingOutOfRange()
+    {
+        SalesItem item = new SalesItem("Book", 2000);
+        //Both are false, as it falls outside of the 1-5 range.
+        assertEquals(false, item.addComment("Bob", "Rating 0", 0));
+        assertEquals(false, item.addComment("Carol", "Rating 6", 6));
+    }
+    
+    
+    @Test
+    public void addCommentFailsForDuplicateAuthor()
+    {
+        SalesItem item = new SalesItem("Book", 2000);
+        assertEquals(true, item.addComment("Bob", "Nice book", 4));
+        assertEquals(false, item.addComment("Alice", "Second review", 3)); //Same author, so rejects.
+    }
+
 
     /**
      * Test that a sales item is correctly initialised (name and price).

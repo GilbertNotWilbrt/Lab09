@@ -18,3 +18,12 @@ discussed in the book.
 NOTE: There are several serious errors to be found in these classes.
 
 14. It creates the constructor, setUp, and tearDown.
+
+17.
+
+I broke one of my tests by changing “Alice” to “Bob”.
+When I ran the tests, BlueJ showed that the test failed.
+It displayed: 
+the expected value (false) and the actual value (true),
+because this was true and not false, it showed an error.
+it displayed a "Show Source" to jump to the error.
