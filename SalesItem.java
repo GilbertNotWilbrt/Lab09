@@ -145,7 +145,7 @@ public class SalesItem
         int i = 1;
         while(i < comments.size()) {
             Comment current = comments.get(i);
-            if(current.getVoteCount() > best.getVoteCount()) {
+            if(current.getVoteCount() >= best.getVoteCount()) {
                 best = current;
             }
             i++;

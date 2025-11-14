@@ -109,4 +109,14 @@ public class SalesItemTest
         assertNotNull(mostHelpful);
         assertEquals("B", mostHelpful.getAuthor());
     }
+    
+    public void testTieKeepsFirstComment(){
+        SalesItem item = new SalesItem("Phone", 100);
+        item.addComment("A", "first", 4);
+        item.addComment("B", "second", 4);
+        
+        Comment best = item.findMostHelpfulComment();
+        
+        assertEquals("A", best.getAuthor());
+    }
 }

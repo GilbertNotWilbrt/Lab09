@@ -41,7 +41,7 @@ public class CommentTest
     public void constructorStoresDetails(){
         Comment comment = new Comment("Alice", "Nice book", 4);
         assertEquals("Alice", comment.getAuthor());
-        assertEquals("Nice phone", comment.getText()); //not sure why it's not working if its in fields
+        assertEquals("Nice phone", comment.getFullDetails()); //not sure why it's not working if its in fields
         assertEquals(4, comment.getRating());
     }
     

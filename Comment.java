@@ -84,4 +84,12 @@ public class Comment
         details += "(Voted as helpful: " + votes + ")\n";
         return details;
     }
+    
+    public String toString()
+    {
+        return "Author: " + author +
+        ", Rating: " + rating +
+        ", Votes: " + votes +
+        ", Text: " + text;
+    }
 }
