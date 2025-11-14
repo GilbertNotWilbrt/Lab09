@@ -51,4 +51,6 @@ public class CommentTest
         comment.upvote();
         assertEquals(1, comment.getVoteCount());
     }
+    
+    
 }

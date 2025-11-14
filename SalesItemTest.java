@@ -87,4 +87,26 @@ public class SalesItemTest
         assertEquals("test name", salesIte1.getName());
         assertEquals(1000, salesIte1.getPrice());
     }
+    
+    public void mostHelpfulIsNullWhenNoComments()
+    {
+        SalesItem item = new SalesItem("Phone", 50000);
+        assertNull(item.findMostHelpfulComment());
+    }
+    
+    public void mostHelpfulCommentHasHighestVotes()
+    {
+        SalesItem item = new SalesItem("Phone", 50000);
+        
+        item.addComment("A", "meh", 3);
+        item.addComment("B", "great", 5);
+        
+        item.upvoteComment(0); //1 vote
+        item.upvoteComment(1); //1 vote
+        item.upvoteComment(1); //2 votes
+        
+        Comment mostHelpful = item.findMostHelpfulComment();
+        assertNotNull(mostHelpful);
+        assertEquals("B", mostHelpful.getAuthor());
+    }
 }
